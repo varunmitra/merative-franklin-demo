@@ -49,10 +49,10 @@ export default async function decorate(block) {
         });
         // add classes for the lower level descriptions
         navSection.querySelectorAll(':scope > ul > li').forEach((levelTwo) => {
-          navSection.classList.add('levelTwo');
+          levelTwo.classList.add('levelTwo');
         });
         navSection.querySelectorAll(':scope > ul > li > ul > li').forEach((levelThree) => {
-          navSection.classList.add('levelThree');
+          levelThree.classList.add('levelThree');
         });
       });
     }
