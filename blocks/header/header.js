@@ -40,11 +40,19 @@ export default async function decorate(block) {
     const navSections = [...nav.children][1];
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
+        // deal with top level dropdowns first
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
         navSection.addEventListener('click', () => {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';
           collapseAllNavSections(navSections);
           navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+        // add classes for the lower level descriptions
+        navSection.querySelectorAll(':scope > ul > li').forEach((levelTwo) => {
+          navSection.classList.add('levelTwo');
+        });
+        navSection.querySelectorAll(':scope > ul > li > ul > li').forEach((levelThree) => {
+          navSection.classList.add('levelThree');
         });
       });
     }
