@@ -12,37 +12,34 @@
 /* global WebImporter */
 /* eslint-disable no-console, class-methods-use-this */
 export default {
-    /**
-       * Apply DOM operations to the provided document and return
-       * the root element to be then transformed to Markdown.
-       * @param {HTMLDocument} document The document
-       * @param {string} url The url of the page imported
-       * @param {string} html The raw html (the document is cleaned up during preprocessing)
-       * @param {object} params Object containing some parameters given by the import process.
-       * @returns {HTMLElement} The root element to be transformed
-       */
-    transformDOM: ({
+  /**
+   * Apply DOM operations to the provided document and return
+   * the root element to be then transformed to Markdown.
+   * @param {HTMLDocument} document The document
+   * @param {string} url The url of the page imported
+   * @param {string} html The raw html (the document is cleaned up during preprocessing)
+   * @param {object} params Object containing some parameters given by the import process.
+   * @returns {HTMLElement} The root element to be transformed
+   */
+  transformDOM: ({
     // eslint-disable-next-line no-unused-vars
-        document, url, html, params,
-    }) => {
+    document, url, html, params,
+  }) => {
     // use helper method to remove header, footer, etc.
-    WebImporter.DOMUtils.remove(document.body, [
-    'header',
-    'footer',
-    ]);
+    WebImporter.DOMUtils.remove(document.body, ['header', 'footer']);
     return document.body;
-    },
-    /**
-       * Return a path that describes the document being transformed (file name, nesting...).
-       * The path is then used to create the corresponding Word document.
-       * @param {HTMLDocument} document The document
-       * @param {string} url The url of the page imported
-       * @param {string} html The raw html (the document is cleaned up during preprocessing)
-       * @param {object} params Object containing some parameters given by the import process.
-       * @return {string} The path
-       */
-    generateDocumentPath: ({
+  },
+  /**
+   * Return a path that describes the document being transformed (file name, nesting...).
+   * The path is then used to create the corresponding Word document.
+   * @param {HTMLDocument} document The document
+   * @param {string} url The url of the page imported
+   * @param {string} html The raw html (the document is cleaned up during preprocessing)
+   * @param {object} params Object containing some parameters given by the import process.
+   * @return {string} The path
+   */
+  generateDocumentPath: ({
     // eslint-disable-next-line no-unused-vars
-        document, url, html, params,
-    }) => new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, ''),
-    };
+    document, url, html, params,
+  }) => new URL(url).pathname.replace(/\.html$/, '').replace(/\/$/, ''),
+};
