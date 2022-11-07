@@ -10,7 +10,7 @@
 
 .newscard .newscard-card-body::before {
     font-size: 15px;
-    font-family: Alliance Medium;
+    font-family: 'Alliance Medium', sans-serif;
     letter-spacing: 3.2px;
     line-height: 120%;
     content: "NEWS";
@@ -51,7 +51,7 @@
     margin-block-end: 0.83em;
     margin-inline-start: 0;
     margin-inline-end: 0;    
-    font-family: "Source Serif4 Light";
+    font-family: 'Source Serif4 Light', sans-serif;
     color: #20201f;
     line-height: 120%;
     font-style: normal;
@@ -60,7 +60,7 @@
 }
 
 .newscard .newscard-card-body a{
-    font-family:Alliance Medium;
+    font-family:'Alliance Medium', sans-serif;
     font-size:16px;
     letter-spacing:.16px;
     line-height:120%;
