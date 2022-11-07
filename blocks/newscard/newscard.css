@@ -8,14 +8,14 @@
     grid-gap: 16px;
 }
 
-.newscard::before {
-    font-size: 14px;
+.newscard .newscard-card-body::before {
+    font-size: 15px;
     font-family: Alliance Medium;
     letter-spacing: 3.2px;
     line-height: 120%;
-    content: "News ";
+    content: "NEWS";
     color: #20201f;
-    padding-left: 574px;
+    padding-top: 50px;       
 }
 
 .newscard > ul > li {   
@@ -56,6 +56,7 @@
     line-height: 120%;
     font-style: normal;
     font-weight: 300;
+    padding-top: 25px;
 }
 
 .newscard .newscard-card-body a{
